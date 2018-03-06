@@ -15,13 +15,9 @@ const store = configureStore();
 //setTextFilter -> bill
 //getVisibleExpenses -> print visible ones to screen
 
-store.dispatch(addExpense({ description: 'Water Bill', amount: 15, createdAt: -2100 }));
-store.dispatch(addExpense({ description: 'Gas Bill', amount: 25, createdAt: 1000 }));
-store.dispatch(setTextFilter('water'));
-
-setTimeout(() => {
-    store.dispatch(setTextFilter('rent'))
-}, 3000);
+store.dispatch(addExpense({ description: 'Water Bill', amount: 4500, createdAt: -2100 }));
+store.dispatch(addExpense({ description: 'Gas Bill', amount: 25 }));
+store.dispatch(addExpense({ description: 'Rent', amount: 109500, createdAt: 1000 }));
 
 const state = store.getState();
 const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
